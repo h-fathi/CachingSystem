@@ -1,4 +1,4 @@
-# CachingSystem
+# Cache Manager System
 
 Async task base caching system for in-memory, distributed, hybrid cache
 
@@ -13,7 +13,7 @@ First of all register what you want to use:
          
 Then you can use it easily like:
 
-           var key = _cacheManager.PrepareKeyForShortTermCache(WeatherForecastServicesDefaults.WeatherForecastByIdCacheKey, "test-1");
+           var key = _cacheManager.PrepareKeyForShortTermCache(WeatherForecastByIdCacheKey, "test-1");
            //var key = _cacheManager.PrepareKeyForShortTermCache("weatherforecast.byId.{0}", "test-1");
            
            //get by key
@@ -23,6 +23,7 @@ Then you can use it easily like:
            
          
 Or like this you can tell if not exsit then do it and set to cache:
+
           var result = await _cacheManager.GetAsync<IEnumerable<WeatherForecast>>(key, () => {
                 return Enumerable.Range(1, 5).Select(index => new WeatherForecast
                 {
