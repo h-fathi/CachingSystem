@@ -33,7 +33,27 @@ Or like this you can tell if not exsit then do it and set to cache:
                     Summary = Summaries[rng.Next(Summaries.Length)]
                 }).ToArray(); 
             });
-        
+The AppSetting config can be like this:
+
+         "Caching": {
+             "DefaultCacheTime": "60",
+             "ShortTermCacheTime": "5",
+             "LongCacheTime": "60000",
+             "BundledFilesCacheTime": "120",
+             "Distributed": {
+               "Host": "localhost",
+               "Port": "6379"
+             },
+             "Cluster": {
+               "Host": "",
+               "Port": "",
+               "Bus": {
+                 "Host": "",
+                 "Port": ""
+               }
+             }
+           }
+  
 This library includes following notable features:
 This library can be run on any .NET Core or .NET application which has .NET Core 3.1, .NET Standard 2.1 and .NET 5.0 support.
 
