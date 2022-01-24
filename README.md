@@ -5,6 +5,7 @@ Async task base caching system for in-memory, distributed, hybrid cache
 This library is a Caching System implementation for .Net Core which will remove developers' pain to write cache manager for each .NET Core and .NET project.
 
 First of all register what you want to use:
+
          services.AddMemoryCachingSystem();
          
          //services.AddDistributedCachingSystem();
